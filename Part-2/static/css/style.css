@@ -10,6 +10,12 @@ body {
   margin: 0;
 }
 
+button {
+  border-color: #000000 !important;
+  border-style: solid !important;
+  border-width: 2px !important;
+}
+
 /* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
 .wrapper {
   position: relative;
@@ -137,6 +143,24 @@ select {
   /* Firefox 18- */
   color: #8e979f;
 }
+/*
+#date-filter {
+  text-align:center;
+}
+
+.block {
+
+}
+
+.center {
+  margin:auto;
+}
+
+.left {
+  margin:auto auto auto 0;
+}
+*/
+
 
 /* media queries which will only be activated at specific screen sizes */
 @media (max-width: 800px) {

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">UFO Sightings
-            <img class="nav-ufo" src="static/images/ufo.svg">
+            <img class="nav-ufo" src="../static/images/ufo.svg">
           </a>
         </div>
       </div>
@@ -33,15 +33,20 @@
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
                 <form>
-                  <div class="form-group">
-                    <ul class="list-group" id="filters">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
-                      </li>
-                    </ul>
+                  <div id="date-filter" class="form-group">
+                    <div id="child1" class="block left">
+                      <ul class="list-group form-group-child" id="filters">
+                        <li class="filter list-group-item">
+                          <label for="date">Enter a Date</label>
+                          <input class="form-control" id="datetime" type="text" placeholder="MM/DD/YYYY">
+                          <label for="date">(exclude leading zeros)</label>
+                        </li>
+                        <li class="filter list-group-item">
+                          <button id="filter-btn" type="button" class="btn btn-default block center">Filter Table</button>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
                 </form>
               </div>
             </div>
@@ -61,8 +66,37 @@
                   <th class="table-head">Comments</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody id="results-body"></tbody>
             </table>
+          </div>
+        </div>
+      </div>
+      <div class="row margin-top-50">
+        <div class="col-12">
+          <div class="filters panel panel-default">
+            <div class="panel-heading">UFO Sighting Data</div>
+            <div class="panel-body">
+              <form class="form-group">
+                <ul class="list-group" id="filters">
+                  <li class="filter list-group-item">
+                    <label for="data-Button">Click to view entire dataset</label>
+                  </li>
+                  <li class="filter list-group-item">
+                    <button id="date-btn" type="button" class="btn btn-default block center">View Data</button>
+                  </li>
+                </ul>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div id="table-area" class="">
+              <table id="ufo-table" class="table table-striped">
+                <thead></thead>
+                <tbody id="all-data-body"></tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -72,8 +106,8 @@
     </footer>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-  <script src="static/js/data.js"></script>
-  <script src="static/js/app.js"></script>
+  <script src="../static/js/data.js"></script>
+  <script src="../static/js/app.js"></script>
 </body>
 
 </html>
