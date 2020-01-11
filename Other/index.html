@@ -21,8 +21,8 @@
         </div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" id="nav-item-nav">
-            <a class="nav-link" href="../UFO_level_2/index.html" target="self">
-              UFO Level-2
+            <a class="nav-link" href="../UFO_level_1/index.html" target="self">
+              UFO Level-1
             </a>
           </li>
 <!--      
@@ -41,34 +41,62 @@
     </div>
     <div class="container">
       <div class="row margin-top-50">
-        <div class="col-md-2">
+        <div class="col-6 col-s-6 col-md-3 col-lg-2 col-xl-2">
           <aside class="filters">
             <div class="panel panel-default">
               <div class="panel-heading">
-                Filter Search
+                Filter Selection
               </div>
               <div class="panel-body">
-                <form>
-                  <div id="date-filter" class="form-group">
-                    <div id="child1" class="block left">
-                      <ul class="list-group form-group-child" id="filters">
-                        <li class="filter list-group-item">
-                          <label for="date">Enter a Date</label>
-                          <input class="form-control" id="datetime" type="text" placeholder="MM/DD/YYYY">
-                          <label for="date">(exclude leading zeros)</label>
-                        </li>
-                        <li class="filter list-group-item">
-                          <button id="filter-btn" type="button" class="btn btn-default block center">Filter Table</button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </form>
+                <ul class="list-group">
+                  <li class="filter list-group-item">
+                    <form id="filter-selection form-group">
+                      <div class="form-check">
+                        <input class="filterSelector form-check-input" type="checkbox" id="date-filter">
+                        <label class="form-check-label" for="gridCheck">
+                          date
+                        </label>           
+                      </div>
+                      <div class="form-check">
+                        <input class="filterSelector form-check-input" type="checkbox" value="" id="city-filter">
+                        <label class="form-check-label" for="gridCheck">
+                          city
+                        </label>           
+                      </div>
+                      <div class="form-check">
+                        <input class="filterSelector form-check-input" type="checkbox" value="" id="state-filter">
+                        <label class="form-check-label" for="gridCheck">
+                          state
+                        </label>           
+                      </div>
+                      <div class="form-check">
+                        <input class="filterSelector form-check-input" type="checkbox" value="" id="country-filter">
+                        <label class="form-check-label" for="gridCheck">
+                          country
+                        </label>           
+                      </div>
+                      <div class="form-check">
+                        <input class="filterSelector form-check-input" type="checkbox" value="" id="shape-filter">
+                        <label class="form-check-label" for="gridCheck">
+                          shape
+                        </label>           
+                      </div>
+                      <br>                      
+                      <button id="filter-btn" type="button" class="btn btn-default block filter center">
+                        Apply Filters
+                      </button>
+                      <label for="filter-btn" class="filter">
+                        *** After entering values of interest
+                      </label>                                            
+                    </form>
+                  </li>
+                </ul>                                    
               </div>
             </div>
           </aside>
-        </div>
-        <div class="col-md-10">
+        </div>        
+        <br>
+        <div class="col-md-12">
           <div id="table-area" class="">
             <table id="ufo-table" class="table table-striped">
               <thead id="results-head"></thead>
@@ -81,14 +109,12 @@
         <div class="col-md-2">
           <aside class="filters">
             <div class="panel panel-default">
-              <div class="panel-heading">
-                UFO Sighting Data
-              </div>
+              <div class="panel-heading">UFO Sighting Data</div>
               <div class="panel-body">
                 <form class="form-group">
                   <ul class="list-group" id="filters">
                     <li class="filter list-group-item">
-                      <label for="data-Button">Click to view entire dataset</label>
+                      <label for="data-btn">Click to view entire dataset</label>
                     </li>
                     <li class="filter list-group-item">
                       <button id="data-btn" type="button" class="btn btn-default block center">View Data</button>

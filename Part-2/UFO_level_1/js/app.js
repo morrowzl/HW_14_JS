@@ -3,13 +3,26 @@ var tableData = data;
 
 var filterBtn = d3.select("#filter-btn");
 
-var dateBtn = d3.select("#date-btn");
+var dataBtn = d3.select("#data-btn");
 
 var inputDate = d3.select("#datetime");
 
 console.log(tableData.length);
 
 filterBtn.on("click", function() {
+
+  d3.select("#results-head").selectAll("tr").remove();
+
+  var thead = d3.select("#results-head");
+
+  headrow = thead.append("tr");
+  headrow.append("th").text("Date");
+  headrow.append("th").text("City");
+  headrow.append("th").text("State");
+  headrow.append("th").text("Country");
+  headrow.append("th").text("Shape");
+  headrow.append("th").text("Duration");
+  headrow.append("th").text("Comments");
 
   d3.select("#results-body").selectAll("tr").remove();
 
@@ -33,7 +46,18 @@ filterBtn.on("click", function() {
 
 });
 
-dateBtn.on("click", function() {
+dataBtn.on("click", function() {
+
+  var dataHead = d3.select("#all-data-head");
+
+  headrow = dataHead.append("tr");
+  headrow.append("th").text("Date");
+  headrow.append("th").text("City");
+  headrow.append("th").text("State");
+  headrow.append("th").text("Country");
+  headrow.append("th").text("Shape");
+  headrow.append("th").text("Duration");
+  headrow.append("th").text("Comments");
 
   function retrieveData(entry) {
     return entry;

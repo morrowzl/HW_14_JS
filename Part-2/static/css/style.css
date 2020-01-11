@@ -49,6 +49,38 @@ button {
   margin: 0;
 }
 
+.nav-item {
+  border-color: #ffffff00;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 3px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.nav-item:hover {
+  border-color: #adff2f;
+  border-style: solid;
+  border-width: 3px;
+}
+
+.nav-link {
+  border-radius: 3px;
+  border-bottom-style: solid;
+  border-width: 3px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.nav-link:hover {
+  background-color: #ffffff00 !important;
+  border-bottom-color: #ffffff00;
+}
+
 /* This CSS styles the ufo icon in the navbar */
 .nav-ufo {
   position: absolute;
@@ -69,6 +101,14 @@ button {
 
 .filters {
   margin-top: 10px;
+}
+
+.filters.panel.panel-default {
+  max-width: 200px;
+}
+
+.form-check-input {
+  vertical-align: middle;
 }
 
 select {
@@ -143,24 +183,6 @@ select {
   /* Firefox 18- */
   color: #8e979f;
 }
-/*
-#date-filter {
-  text-align:center;
-}
-
-.block {
-
-}
-
-.center {
-  margin:auto;
-}
-
-.left {
-  margin:auto auto auto 0;
-}
-*/
-
 
 /* media queries which will only be activated at specific screen sizes */
 @media (max-width: 800px) {
