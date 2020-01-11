@@ -1,91 +1,199 @@
-//
-//
-//variableDeclarations-------------------------------------------------
-var tableData = data;
+// variableDeclarations -------------------------------------------
 
+var tableData = data;
+var filteredData = tableData;
+
+var allDataBtn = d3.select("#allDataBtn");
 var filterDateBtn = d3.select("#filterDateBtn");
 var filterCityBtn = d3.select("#filterCityBtn");
 var filterStateBtn = d3.select("#filterStateBtn");
 var filterCountryBtn = d3.select("#filterCountryBtn");
 var filterShapeBtn = d3.select("#filterShapeBtn");
 
-var dataBtn = d3.select("#data-btn");
+var tableHead = d3.select("#tableHead");
 
-var inputDate = d3.select("#date");
-var inputCity = d3.select("#city");
-var inputState = d3.select("#state");
-var inputCountry = d3.select("#country");
-var inputShape = d3.select("#shape");
-
-var dateQuery = inputDate.property("value");
-var cityQuery = inputDate.property("value");
-var stateQuery = inputDate.property("value");
-var countryQuery = inputDate.property("value");
-var shapeQuery = inputDate.property("value");
-
-var resultsHead = d3.select("#resultsHead");
-
-var resultsBody = d3.select("#resultsBody");
-
-var noFilterBody = d3.select("#all-data-body");
+var tableBody = d3.select("#tableBody");
 
 //scriptCode-----------------------------------------------------------
+//
+// Filtering by each parameter
+//
+filterDateBtn.on("click", function() {
 
-filterBtn.on("click", function() {
+  d3.select("#tableHead").selectAll("tr").remove();
+  d3.select("#tableBody").selectAll("tr").remove();
 
-  d3.select("#results-head").selectAll("tr").remove();
-
-  theadrow = thead.append("tr");
+  theadrow = tableHead.append("tr");
   theadrow.append("th").text("Date");
   theadrow.append("th").text("City");
   theadrow.append("th").text("State");
-  headrow.append("th").text("Country");
-  headrow.append("th").text("Shape");
-  headrow.append("th").text("Duration");
-  headrow.append("th").text("Comments");
+  theadrow.append("th").text("Country");
+  theadrow.append("th").text("Shape");
+  theadrow.append("th").text("Duration");
+  theadrow.append("th").text("Comments");
 
-  d3.select("#results-body").selectAll("tr").remove();
-
-  function matchDates(foobar) {
+  var inputDate = d3.select("#date");
+  var dateQuery = inputDate.property("value");
+  function matchDate(foobar) {
     return foobar.datetime == dateQuery;
   }
+  var filteredOnDate = filteredData.filter(matchDate);
 
-  var filteredDates = tableData.filter(matchDates);
-
-  filteredDates.forEach((FD) => {
-    var row = tbody.append("tr");
+  filteredOnDate.forEach((FD) => {
+    var row = tableBody.append("tr");
     Object.entries(FD).forEach(([key, value]) => {
       var cell = row.append("td");
       cell.text(value);
     });
   });
+  filteredData = filteredOnDate;
 });
 
-dataBtn.on("click", function() {
+filterCityBtn.on("click", function() {
 
-  var dataBody = d3.select("#all-data-body");
-  headrow = dataHead.append("tr");
-  headrow.append("th").text("Date");
-  headrow.append("th").text("City");
-  headrow.append("th").text("State");
-  headrow.append("th").text("Country");
-  headrow.append("th").text("Shape");
-  headrow.append("th").text("Duration");
-  headrow.append("th").text("Comments");
+  d3.select("#tableHead").selectAll("tr").remove();
+  d3.select("#tableBody").selectAll("tr").remove();
 
-  function retrieveData(entry) {
-    return entry;
+  theadrow = tableHead.append("tr");
+  theadrow.append("th").text("Date");
+  theadrow.append("th").text("City");
+  theadrow.append("th").text("State");
+  theadrow.append("th").text("Country");
+  theadrow.append("th").text("Shape");
+  theadrow.append("th").text("Duration");
+  theadrow.append("th").text("Comments");
+
+  var inputCity = d3.select("#city");
+  var cityQuery = inputCity.property("value");
+  function matchCity(foobar) {
+    return foobar.city == cityQuery;
   }
+  var filteredOnCitiy = filteredData.filter(matchCity);
 
-  var retrievedData = tableData;
+  filteredOnCity.forEach((FD) => {
+    var row = tableBody.append("tr");
+    Object.entries(FD).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+    });
+  });
+  filteredData = filteredOnCity;
+});
 
+filterStateBtn.on("click", function() {
+
+  d3.select("#tableHead").selectAll("tr").remove();
+  d3.select("#tableBody").selectAll("tr").remove();
+
+  theadrow = tableHead.append("tr");
+  theadrow.append("th").text("Date");
+  theadrow.append("th").text("City");
+  theadrow.append("th").text("State");
+  theadrow.append("th").text("Country");
+  theadrow.append("th").text("Shape");
+  theadrow.append("th").text("Duration");
+  theadrow.append("th").text("Comments");
   
-  
-  retrievedData.forEach((entry) => {
-    var row = dataBody.append("tr");
+  var inputState = d3.select("#state");
+  var stateQuery = inputState.property("value");
+  function matchState(foobar) {
+    return foobar.state == stateQuery;
+  }
+  var filteredOnState = filteredData.filter(matchState);
+
+  filteredOnState.forEach((FD) => {
+    var row = tableBody.append("tr");
+    Object.entries(FD).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+    });
+  });
+  filteredData = filteredOnState;
+});
+
+filterCountryBtn.on("click", function() {
+
+  d3.select("#tableHead").selectAll("tr").remove();
+  d3.select("#tableBody").selectAll("tr").remove();
+
+  theadrow = tableHead.append("tr");
+  theadrow.append("th").text("Date");
+  theadrow.append("th").text("City");
+  theadrow.append("th").text("State");
+  theadrow.append("th").text("Country");
+  theadrow.append("th").text("Shape");
+  theadrow.append("th").text("Duration");
+  theadrow.append("th").text("Comments");
+  var inputCountry = d3.select("#country");
+  var countryQuery = inputCountry.property("value");
+  function matchCountry(foobar) {
+    return foobar.country == countryQuery;
+  }
+  var filteredOnCountry = filteredData.filter(matchCountry);
+
+  filteredOnCountry.forEach((FD) => {
+    var row = tableBody.append("tr");
+    Object.entries(FD).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+    });
+  });
+  filteredData = filteredOnCouuntry;
+});
+
+filterShapeBtn.on("click", function() {
+
+  d3.select("#tableHead").selectAll("tr").remove();
+  d3.select("#tableBody").selectAll("tr").remove();
+
+  theadrow = tableHead.append("tr");
+  theadrow.append("th").text("Date");
+  theadrow.append("th").text("City");
+  theadrow.append("th").text("State");
+  theadrow.append("th").text("Country");
+  theadrow.append("th").text("Shape");
+  theadrow.append("th").text("Duration");
+  theadrow.append("th").text("Comments");
+
+  var inputShape = d3.select("#shape");
+  var shapeQuery = inputShape.property("value");
+  function matchShape(foobar) {
+    return foobar.shape == shapeQuery;
+  }
+  var filteredOnShape = filteredData.filter(matchShape);
+
+  filteredOnShape.forEach((FD) => {
+    var row = tableBody.append("tr");
+    Object.entries(FD).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+    });
+  });
+  filteredData = filteredOnShape;
+});
+//
+// Displaying all data / unfiltering
+//
+allDataBtn.on("click", function() {
+
+  d3.select("#tableHead").selectAll("tr").remove();
+  d3.select("#tableBody").selectAll("tr").remove();
+
+  theadrow = tableHead.append("tr");
+  theadrow.append("th").text("Date");
+  theadrow.append("th").text("City");
+  theadrow.append("th").text("State");
+  theadrow.append("th").text("Country");
+  theadrow.append("th").text("Shape");
+  theadrow.append("th").text("Duration");
+  theadrow.append("th").text("Comments");
+
+  tableData.forEach((entry) => {
+    var row = tableBody.append("tr");
     Object.entries(entry).forEach(([key, value]) => { 
       var cell = row.append("td");
       cell.text(value);
     });
   });
+  filteredData = tableData;
 });

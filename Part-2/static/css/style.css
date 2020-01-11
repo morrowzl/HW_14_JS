@@ -11,7 +11,7 @@ body {
 }
 
 button {
-  border-color: #000000 !important;
+  border-color: #2b3e50 !important;
   border-style: solid !important;
   border-width: 2px !important;
 }
@@ -84,8 +84,10 @@ button {
 /* This CSS styles the ufo icon in the navbar */
 .nav-ufo {
   position: absolute;
-  bottom: 5px;
-  left: 150px;
+  /*bottom: 5px;
+  left: 150px;*/
+  bottom: 10px;
+  right: 50px;
   width: 35px;
   color: white;
 }
@@ -104,7 +106,8 @@ button {
 }
 
 .filters.panel.panel-default {
-  max-width: 200px;
+  width: 300px;
+  height: auto;
 }
 
 .form-check-input {
@@ -117,6 +120,10 @@ select {
   padding: 8px;
   color: #8e979f;
   outline: none;
+}
+
+.table-row {
+  text-align: center;
 }
 
 #table-area th {

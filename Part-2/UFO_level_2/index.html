@@ -17,17 +17,17 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">
             UFO Sightings
-            <img class="nav-ufo" src="../static/images/ufo.svg">
           </a>
         </div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" id="nav-item-nav">
-            <a class="nav-link" href="../UFO_level_2/index.html" target="self">
-              UFO Level-2
+            <a class="nav-link" href="../UFO_level_1/index.html" target="self">
+              UFO Level-1
             </a>
           </li>
         </ul>
       </div>
+      <img class="nav-ufo" src="../static/images/ufo.svg">
     </nav>
     <div class="hero text-center">
       <h1>
@@ -39,9 +39,36 @@
     </div>
     <div class="container">
 <!----------------------------- row for filter panels ------------->
-      <div class="row margin-top-50">
+      <div class="row margin-top-50 justify-content-between">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+          <div class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Sighting Data
+              </div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="allDataBtn">
+                          Click to view entire dataset
+                        </label>
+                      </li>
+                      <li class="filter list-group-item">
+                        <button id="allDataBtn" type="button" class="btn btn-default">
+                          View Data
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 <!-- date col date col date col date col date col date col  -->
-        <div class="col-md-2">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
           <aside class="filters">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -49,8 +76,8 @@
               </div>
               <div class="panel-body">
                 <form>
-                  <div id="date-filter" class="form-group">
-                    <ul class="list-group form-group-child" id="filters">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="date">
                           Enter a Date
@@ -73,7 +100,7 @@
           </aside>
         </div>
 <!-- city col city col city col city col city col city col  -->
-        <div class="col-md-2">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
           <aside class="filters">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -81,13 +108,13 @@
               </div>
               <div class="panel-body">
                 <form>
-                  <div id="city-filter" class="form-group">
-                    <ul class="list-group form-group-child" id="filters">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="city">
                           Select City 
                         </label>
-                        <input class="form-control" id="city" type="text" placeholder="MM/DD/YYYY">
+                        <input class="form-control" id="city" type="text" placeholder="selector">
                         <label for="city">
                           (some label text)
                         </label>
@@ -105,7 +132,7 @@
           </aside>
         </div>
 <!-- state col state col state col state col state col state col -->
-        <div class="col-md-2">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
           <aside class="filters">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -113,8 +140,8 @@
               </div>
               <div class="panel-body">
                 <form>
-                  <div id="state-filter" class="form-group">
-                    <ul class="list-group form-group-child" id="filters">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="state">
                           Enter a State in US or Canada
@@ -137,7 +164,7 @@
           </aside>
         </div>
 <!-- country col country col country col country col country col -->
-        <div class="col-md-2">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
           <aside class="filters">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -145,8 +172,8 @@
               </div>
               <div class="panel-body">
                 <form>
-                  <div id="country-filter" class="form-group">
-                    <ul class="list-group form-group-child" id="filters">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="country">
                           Enter Country
@@ -169,7 +196,7 @@
           </aside>
         </div>
 <!-- shape col shape col shape col shape col shape col shape col -->
-        <div class="col-md-2">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2">
           <aside class="filters">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -177,13 +204,13 @@
               </div>
               <div class="panel-body">
                 <form>
-                  <div id="shape-filter" class="form-group">
-                    <ul class="list-group form-group-child" id="filters">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="shape">
                           Select Shape
                         </label>
-                        <input class="form-control" id="shape" type="text" placeholder="MM/DD/YYYY">
+                        <input class="form-control" id="shape" type="text" placeholder="selector">
                         <label for="shape">
                           (some label text)
                         </label>
@@ -201,45 +228,13 @@
           </aside>
         </div>
       </div>
-<!--------------- row for filtered table display ------------------------>
-      <div class="row margin-top-50">
-        <div class="col-md-10 offset-md-1">
+<!--------------- row for table display ------------------------>
+      <div class="row margin-top-50 table-row">
+        <div class="col-10 col-offset-1">
           <div id="table-area" class="">
             <table id="ufo-table" class="table table-striped">
-              <thead id="resultsHead"></thead>
-              <tbody id="resultsBody"></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-<!--------------- row for unfiltered table display ---------------------->
-      <div class="row margin-top-50">
-        <div class="col-md-2">
-          <aside class="filters">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                UFO Sighting Data
-              </div>
-              <div class="panel-body">
-                <form class="form-group">
-                  <ul class="list-group" id="filters">
-                    <li class="filter list-group-item">
-                      <label for="data-Button">Click to view entire dataset</label>
-                    </li>
-                    <li class="filter list-group-item">
-                      <button id="data-btn" type="button" class="btn btn-default block center">View Data</button>
-                    </li>
-                  </ul>
-                </form>
-              </div>
-            </div>
-          </aside>
-        </div>
-        <div class="col-md-10">
-          <div id="table-area" class="">
-            <table id="ufo-table" class="table table-striped">
-              <thead id="all-data-head"></thead>
-              <tbody id="all-data-body"></tbody>
+              <thead id="tableHead"></thead>
+              <tbody id="tableBody"></tbody>
             </table>
           </div>
         </div>

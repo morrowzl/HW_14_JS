@@ -16,10 +16,6 @@ button.on("click", function() {
   d3.select("#bloodyTBody").selectAll("tr").remove();
   d3.select(".summary").selectAll("li").remove();
 
-  // Select the input element and get the raw HTML node
-    // Moved to line 7 to change the inputField placeholder contents on render
-
-  // Get the value property of the input element
   var inputValue = inputField.property("value");
 
   d3.select("#button").text("Ka-POW");
@@ -59,27 +55,6 @@ button.on("click", function() {
   console.log(`differences = ${differences}`);
   console.log(`${differences.length} differences`)
   console.log(`sigma = ${sigma}`);
-
-  
- 
-  // Next, use math.js to calculate the mean, median, mode, var, and std of the ages
-  // var calcdmean = math.mean(ages);
-  // var calcdmedian = math.median(ages);
-  // var calcdmode = math.mode(ages);
-  // var calcdstd = math.std(ages);
-
-  // var stats = [calcdmean, calcdmedian, calcdmode, calcdstd];
-
-  // var summaryList = d3.select(".summary");
-
-  // stats.forEach((statistic) => {
-  //   var listItem = summaryList.append("li");
-  //   Object.entries(statistic).forEach((statistic) => {
-  //     listItem.text(statistic);
-  //   });
-  // });
-  // Finally, add the summary stats to the `ul` tag
- 
 
   var tbody = d3.select("#bloodyTBody");
 
