@@ -68,7 +68,7 @@ filterCityBtn.on("click", function() {
   function matchCity(foobar) {
     return foobar.city == cityQuery;
   }
-  var filteredOnCitiy = filteredData.filter(matchCity);
+  var filteredOnCity = filteredData.filter(matchCity);
 
   filteredOnCity.forEach((FD) => {
     var row = tableBody.append("tr");
